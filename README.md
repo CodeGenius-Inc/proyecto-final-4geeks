@@ -186,8 +186,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 ## 👨‍💻 Autor
 
 **Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/Fr33d0m2025)
-
+- GitHub: [@Fr33d0m2025](https://github.com/Fr33d0m2025)
 ---
 
 ⭐ ¡Dale una estrella si te gusta el proyecto!
