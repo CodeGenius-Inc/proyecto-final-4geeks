@@ -1,0 +1,263 @@
+# =============================================
+# DEPENDENCIAS Y ENTORNOS VIRTUALES
+# =============================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+.env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =============================================
+# ARCHIVOS DE CONFIGURACIÓN SENSIBLES
+# =============================================
+
+# Variables de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Configuraciones de base de datos
+*.db
+*.sqlite
+*.sqlite3
+database.db
+db.sqlite3
+
+# =============================================
+# ARCHIVOS DE BUILD Y DISTRIBUCIÓN
+# =============================================
+
+# Frontend builds
+dist/
+dist-ssr/
+build/
+*.local
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Python builds
+*.egg-info/
+dist/
+build/
+*.egg
+
+# =============================================
+# ARCHIVOS TEMPORALES Y CACHE
+# =============================================
+
+# Cache files
+.cache/
+.npm/
+.eslintcache
+*.tgz
+*.tar.gz
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.coverage
+.nyc_output
+.coverage.*
+
+# Testing
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+
+# =============================================
+# IDE Y EDITORES
+# =============================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# =============================================
+# SISTEMA OPERATIVO
+# =============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# =============================================
+# LOGS Y ARCHIVOS TEMPORALES
+# =============================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+.grunt
+lib-cov
+.lock-wscript
+.wafpickle-N
+.node_repl_history
+*.tgz
+.yarn-integrity
+.npm
+
+# =============================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# =============================================
+
+# Archivos personales de configuración del entorno de desarrollo
+iniciar_servidores.bat
+*.bat
+
+# Archivos de documentación temporal
+TODO_HOY.md
+TODO_MANANA.md
+
+# Backups
+*.backup
+*.bak
+*.tmp
+*.temp
+
+# =============================================
+# SEGURIDAD Y CLAVES
+# =============================================
+
+# Claves SSH
+*.pem
+*.key
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# Certificados SSL
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# =============================================
+# MISCELÁNEOS
+# =============================================
+
+# Thumbnails
+*.jpg:large
+*.jpeg:large
+*.png:large
+*.gif:large
+
+# Compressed files
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Temporary files
+.tmp/
+temp/
+tmp/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+

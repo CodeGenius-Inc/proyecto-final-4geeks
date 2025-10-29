@@ -1,0 +1,210 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --text-dark: #333;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema Oscuro */
+[data-theme='dark'] {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] body {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Estilos para tema oscuro */
+[data-theme='dark'] .bg-light {
+  background-color: #1a1a1a !important;
+}
+
+[data-theme='dark'] .bg-white {
+  background-color: #1a1a1a !important;
+}
+
+[data-theme='dark'] .text-muted {
+  color: #9ca3af !important;
+}
+
+[data-theme='dark'] .card {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #f9fafb !important;
+}
+
+[data-theme='dark'] .card-body {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+}
+
+[data-theme='dark'] .card-header {
+  background-color: #0f1419 !important;
+  border-color: #374151 !important;
+}
+
+[data-theme='dark'] .form-control,
+[data-theme='dark'] .form-select {
+  background-color: #2d2d2d !important;
+  border-color: #555 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .form-control::placeholder {
+  color: #6b7280 !important;
+}
+
+[data-theme='dark'] .form-control:focus,
+[data-theme='dark'] .form-select:focus {
+  background-color: #2d2d2d !important;
+  border-color: #667eea !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .form-label {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .form-text {
+  color: #9ca3af !important;
+}
+
+[data-theme='dark'] input,
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .btn {
+  border-color: transparent;
+}
+
+[data-theme='dark'] .btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+[data-theme='dark'] .btn-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+}
+
+[data-theme='dark'] .btn-success {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+[data-theme='dark'] .btn-danger {
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+[data-theme='dark'] .btn-outline-primary {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+[data-theme='dark'] .btn-outline-primary:hover {
+  background-color: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+[data-theme='dark'] .alert {
+  border-color: #374151 !important;
+}
+
+[data-theme='dark'] .alert-success {
+  background-color: #064e3b !important;
+  border-color: #065f46 !important;
+  color: #d1fae5 !important;
+}
+
+[data-theme='dark'] .alert-danger {
+  background-color: #7f1d1d !important;
+  border-color: #991b1b !important;
+  color: #fecaca !important;
+}
+
+[data-theme='dark'] .alert-info {
+  background-color: #0c4a6e !important;
+  border-color: #075985 !important;
+  color: #bae6fd !important;
+}
+
+/* Urgencia de pedidos */
+.urgencia-normal {
+  background-color: #d4edda !important;
+  border-left: 4px solid #28a745 !important;
+}
+
+.urgencia-urgente {
+  background-color: #fff3cd !important;
+  border-left: 4px solid #ffc107 !important;
+}
+
+.urgencia-critico {
+  background-color: #f8d7da !important;
+  border-left: 4px solid #dc3545 !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Estados de pedidos */
+.badge-pendiente {
+  background-color: #6c757d;
+}
+
+.badge-en-ruta {
+  background-color: #0d6efd;
+}
+
+.badge-completado {
+  background-color: #198754;
+}
+
+.badge-cancelado {
+  background-color: #dc3545;
+}

@@ -1,0 +1,204 @@
+.filters-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pedidos-table {
+  background: white;
+}
+
+.pedidos-table thead {
+  background: #f8f9fa;
+}
+
+.pedidos-table th {
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+}
+
+.pedidos-table td {
+  vertical-align: middle;
+}
+
+.pedidos-table .table-danger {
+  background-color: #fee !important;
+}
+
+/* Tema Oscuro */
+[data-theme='dark'] .filters-card {
+  background: transparent !important;
+  box-shadow: none;
+  border: 1px solid #404040;
+}
+
+[data-theme='dark'] .filters-card .form-control,
+[data-theme='dark'] .filters-card .form-select {
+  background: #1a1a1a !important;
+  border-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .filters-card .form-label {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .pedidos-table {
+  background: transparent;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .pedidos-table thead {
+  background: #1a1a1a !important;
+}
+
+[data-theme='dark'] .pedidos-table thead th {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border-bottom-color: #404040 !important;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .pedidos-table tbody tr {
+  background-color: transparent !important;
+  border-color: #404040 !important;
+}
+
+[data-theme='dark'] .pedidos-table tbody tr td {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #404040 !important;
+}
+
+[data-theme='dark'] .pedidos-table tbody tr:hover td {
+  background-color: #2d2d2d !important;
+}
+
+[data-theme='dark'] .pedidos-table .table-danger td {
+  background-color: #400 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .pedidos-table * {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .pedidos-table small,
+[data-theme='dark'] .pedidos-table p {
+  color: #ffffff !important;
+}
+
+/* Modal en tema oscuro */
+[data-theme='dark'] .modal-content {
+  background: #2d2d2d !important;
+  border-color: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .modal-header {
+  background: #2d2d2d !important;
+  border-color: #404040 !important;
+}
+
+[data-theme='dark'] .modal-title {
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .modal-body {
+  background: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .modal-footer {
+  background: #2d2d2d !important;
+  border-color: #404040 !important;
+}
+
+[data-theme='dark'] .btn-close {
+  filter: invert(1);
+}
+
+/* Modal de Detalle - Estilos mejorados */
+.pedido-detail-card {
+  padding: 0.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.2s ease;
+}
+
+.detail-item:hover {
+  background: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+  line-height: 1.4;
+}
+
+.detail-observations {
+  background: rgba(102, 126, 234, 0.05);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-style: italic;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+/* Estilos para modo oscuro */
+[data-theme='dark'] .detail-item {
+  background: #3a3a3a;
+  border-left-color: #667eea;
+}
+
+[data-theme='dark'] .detail-item:hover {
+  background: #404040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .detail-label {
+  color: #9ca3af;
+}
+
+[data-theme='dark'] .detail-value {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .detail-observations {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
+  color: #e0e0e0;
+}
+

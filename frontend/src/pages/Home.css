@@ -1,0 +1,461 @@
+.home-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url('/images/hero-bg.jpg'),
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.feature-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.phone-number-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.phone-icon {
+  font-size: 1.5rem;
+}
+
+.hero-statistics {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animate-slide-up-delay {
+  animation: slideUp 1s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUp 1s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+/* Services Section */
+.services-section {
+  background: #f8f9fa;
+}
+
+[data-theme='dark'] .services-section {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .products-section {
+  background: #2d2d2d !important;
+}
+
+[data-theme='dark'] .fleet-section {
+  background: #2d2d2d !important;
+}
+
+[data-theme='dark'] .why-card {
+  background: #3a3a3a !important;
+  color: #e0e0e0 !important;
+}
+
+[data-theme='dark'] .why-card:hover {
+  background: #404040 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .why-card h4,
+[data-theme='dark'] .why-card p {
+  color: #e0e0e0 !important;
+}
+
+[data-theme='dark'] .why-section {
+  background: #2d2d2d !important;
+}
+
+[data-theme='dark'] .footer-section {
+  background: #1a1a1a !important;
+}
+
+[data-theme='dark'] .footer-section h5,
+[data-theme='dark'] .footer-section h6,
+[data-theme='dark'] .footer-section p {
+  color: #e0e0e0 !important;
+}
+
+[data-theme='dark'] .form-section {
+  background: #2d2d2d !important;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .section-title {
+  color: #e0e0e0 !important;
+}
+
+[data-theme='dark'] .section-title::after {
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+[data-theme='dark'] .lead {
+  color: #c0c0c0 !important;
+}
+
+[data-theme='dark'] .hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme='dark'] .hero-image {
+  background-blend-mode: normal;
+}
+
+/* Mejoras de contraste para cards de productos */
+[data-theme='dark'] .product-card {
+  background-color: #3a3a3a;
+  border-color: #555;
+}
+
+[data-theme='dark'] .product-card .card-title,
+[data-theme='dark'] .product-card .card-text {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .product-card small {
+  color: #b0b0b0;
+}
+
+/* Fleet features en tema oscuro */
+[data-theme='dark'] .fleet-features li {
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .fleet-features li::before {
+  color: #667eea;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border: none !important;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Form Section */
+.form-section {
+  background: white;
+}
+
+/* Form Styles */
+.form-control:focus,
+.form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-light {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Styles */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Fleet Section */
+.fleet-section {
+  background: white;
+}
+
+.fleet-image {
+  height: 500px;
+  background: url('/images/fleet-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.fleet-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  pointer-events: none;
+}
+
+.fleet-features {
+  list-style: none;
+  padding: 0;
+}
+
+.fleet-features li {
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.fleet-features li::before {
+  content: "✓";
+  color: #667eea;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Product Cards */
+.product-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.product-card-image.regular {
+  background-image: url('/images/regular.jpg');
+}
+
+.product-card-image.diesel {
+  background-image: url('/images/diesel.jpg');
+}
+
+.product-card-image.premium {
+  background-image: url('/images/premium.jpg');
+}
+
+.product-card {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Why Section */
+.why-card {
+  text-align: center;
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.why-card:hover {
+  background: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.why-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Products Section */
+.products-section {
+  background: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .display-1 {
+    font-size: 2.5rem;
+  }
+
+  .fleet-image {
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-statistics {
+    margin-top: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
