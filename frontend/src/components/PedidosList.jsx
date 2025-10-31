@@ -39,6 +39,9 @@ const PedidosList = () => {
   }
 
   const cambiarEstado = async (id, nuevoEstado) => {
+    const mensaje = nuevoEstado === 'en_ruta' ? '¿Confirmar que este pedido está en ruta?' : '¿Estás seguro?'
+    if (!window.confirm(mensaje)) return
+
     try {
       await pedidosAPI.cambiarEstado(id, nuevoEstado)
       showAlert('success', 'Estado actualizado correctamente')
@@ -107,12 +110,13 @@ const PedidosList = () => {
   }
 
   const getUrgenciaBadge = (urgencia) => {
+    const normalizado = urgencia?.toLowerCase()
     const config = {
       normal: { variant: 'success', text: 'Normal' },
       urgente: { variant: 'warning', text: 'Urgente' },
       critico: { variant: 'danger', text: 'Crítico' },
     }
-    const cfg = config[urgencia] || { variant: 'secondary', text: urgencia }
+    const cfg = config[normalizado] || { variant: 'secondary', text: urgencia || 'N/A' }
     return <Badge bg={cfg.variant}>{cfg.text}</Badge>
   }
 

@@ -18,3 +18,5 @@ class Config:
     def DATABASE_URL(self):
         return f"dbname={self.DB_NAME} user={self.DB_USER} password={self.DB_PASSWORD} host={self.DB_HOST} port={self.DB_PORT}"
 
+
+
