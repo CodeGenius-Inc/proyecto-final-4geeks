@@ -186,9 +186,9 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 ## 👨‍💻 Autor
 
 **Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-
+- GitHub: [@Fr33d0m2025](https://github.com/Fr33d0m2025)
+- GitHub: [@CarlosLooopez](https://github.com/CarlosLooopez)
+- GitHub: [@Sergio723g](https://github.com/Sergio723g)
 ---
 
 ⭐ ¡Dale una estrella si te gusta el proyecto!
