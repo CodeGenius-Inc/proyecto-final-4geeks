@@ -207,9 +207,7 @@ const Home = () => {
                   <li>Personal altamente capacitado y certificado</li>
                   <li>Controles de calidad en cada entrega</li>
                 </ul>
-                <Button variant="primary" size="lg" className="mt-4" href="#formulario">
-                  Solicitar Servicio
-                </Button>
+
               </div>
             </Col>
           </Row>
