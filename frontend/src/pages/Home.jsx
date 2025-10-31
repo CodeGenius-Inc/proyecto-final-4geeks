@@ -28,26 +28,75 @@ const Home = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+
+    if (name === 'telefono') {
+      const soloNumeros = value.replace(/\D/g, '')
+      setFormData((prev) => ({
+        ...prev,
+        [name]: soloNumeros,
+      }))
+      return
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!formData.nombre_cliente.trim()) {
+      setAlert({ show: true, variant: 'danger', message: '❌ El nombre del cliente es obligatorio' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
+    if (!formData.telefono.trim()) {
+      setAlert({ show: true, variant: 'danger', message: '❌ El teléfono es obligatorio' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
+    if (formData.telefono.length < 8) {
+      setAlert({ show: true, variant: 'danger', message: '❌ El teléfono debe tener al menos 8 dígitos' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
+    if (!formData.direccion.trim()) {
+      setAlert({ show: true, variant: 'danger', message: '❌ La dirección de entrega es obligatoria' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
+    if (!formData.tipo_combustible) {
+      setAlert({ show: true, variant: 'danger', message: '❌ Debes seleccionar un tipo de combustible' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
+    const cantidadNumerica = parseFloat(formData.cantidad)
+    if (!cantidadNumerica || cantidadNumerica < 100) {
+      setAlert({ show: true, variant: 'danger', message: '❌ La cantidad mínima es 100 galones' })
+      setTimeout(() => setAlert({ show: false, variant: '', message: '' }), 5000)
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
       await pedidosAPI.create({
         ...formData,
-        cantidad: parseFloat(formData.cantidad),
+        cantidad: cantidadNumerica,
       })
 
       setAlert({
         show: true,
         variant: 'success',
-        message: '¡Pedido registrado exitosamente! Nos pondremos en contacto con usted pronto.',
+        message: '¡Pedido registrado exitosamente! Nos pondremos en contacto con usted pronto. Si desea cancelar su pedido, puede hacerlo llamando a nuestro teléfono: +1-800-FUELFLOW',
       })
 
       setFormData({
@@ -62,11 +111,10 @@ const Home = () => {
 
       setTimeout(() => {
         setAlert({ show: false, variant: '', message: '' })
-      }, 5000)
+      }, 12000)
     } catch (error) {
-      
       const errorMsg = error.response?.data?.error || error.response?.data?.traceback || error.message || 'Error desconocido'
-      
+
       setAlert({
         show: true,
         variant: 'danger',
@@ -333,8 +381,11 @@ const Home = () => {
                             value={formData.telefono}
                             onChange={handleChange}
                             required
-                            placeholder="+1 234 567 8900"
+                            placeholder="Ingrese solo números"
+                            minLength={8}
+                            maxLength={15}
                           />
+                          <Form.Text className="text-muted">Solo números, mínimo 8 dígitos</Form.Text>
                         </Form.Group>
                       </Col>
                     </Row>
@@ -376,9 +427,7 @@ const Home = () => {
                             step="1"
                             placeholder="Mínimo 100 galones"
                           />
-                          <Form.Text className="text-muted">
-                            Mínimo: 100 galones
-                          </Form.Text>
+                          <Form.Text className="text-muted">Mínimo: 100 galones</Form.Text>
                         </Form.Group>
                       </Col>
                     </Row>

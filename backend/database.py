@@ -88,7 +88,8 @@ def get_or_create_cliente(nombre, telefono, direccion):
     
     cursor = conn.cursor()
     try:
-        # Buscar cliente existente por nombre (ya que telefono ahora es VARCHAR)
+        telefono_limpio = ''.join(filter(str.isdigit, str(telefono)))
+
         cursor.execute("""
             SELECT cliente_id FROM cliente 
             WHERE nombre = %s AND direccion = %s
@@ -97,17 +98,14 @@ def get_or_create_cliente(nombre, telefono, direccion):
         
         if result:
             cliente_id = result[0]
-            # Actualizar datos si han cambiado
             cursor.execute("""
                 UPDATE cliente 
-                SET nombre = %s, direccion = %s 
+                SET nombre = %s, telefono = %s, direccion = %s 
                 WHERE cliente_id = %s
-            """, (nombre, direccion, cliente_id))
+            """, (nombre, telefono_limpio, direccion, cliente_id))
             conn.commit()
             return cliente_id
         
-        # Crear nuevo cliente
-        telefono_limpio = ''.join(filter(str.isdigit, str(telefono)))
         cursor.execute("""
             INSERT INTO cliente (nombre, telefono, direccion)
             VALUES (%s, %s, %s)
@@ -339,25 +337,23 @@ def update_pedido(id, pedido_data):
     
     cursor = conn.cursor()
     try:
-        # Obtener IDs de las tablas de referencia
         cliente_id = get_or_create_cliente(
             pedido_data['nombre_cliente'],
             pedido_data['telefono'],
             pedido_data['direccion']
         )
-        
+
         tipo_combustible_id = get_tipo_combustible_id(pedido_data['tipo_combustible'])
-        
+
         cantidad = int(float(pedido_data['cantidad']))
-        
-        # Mapear urgencia
+
         urgencia_map = {
             'normal': 'Normal',
             'urgente': 'Urgente',
             'critico': 'Critico'
         }
         urgencia = urgencia_map.get(pedido_data.get('nivel_urgencia', 'normal'), 'Normal')
-        
+
         cursor.execute("""
             UPDATE pedidos SET
                 cliente_id = %s,
