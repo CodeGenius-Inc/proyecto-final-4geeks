@@ -337,7 +337,7 @@
 
 .fleet-image {
   height: 500px;
-  background: url('/images/fleet-image.jpg');
+  background: url('/images/camiones-diesel.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -389,11 +389,11 @@
 }
 
 .product-card-image.diesel {
-  background-image: url('/images/diesel.jpg');
+  background-image: url('/images/diesel2.jpg');
 }
 
 .product-card-image.premium {
-  background-image: url('/images/premium.jpg');
+  background-image: url('/images/premium.avif');
 }
 
 .product-card {
