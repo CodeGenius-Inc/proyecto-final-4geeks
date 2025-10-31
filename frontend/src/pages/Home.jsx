@@ -188,53 +188,78 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="fleet-section py-5 bg-white">
-        <Container>
-          <Row>
-            <Col lg={6} className="mb-4">
-              <Carousel className="shadow rounded overflow-hidden fleet-carousel">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="/images/fleet-image.jpg"
-                    alt="Flota moderna - unidad 1"
-                  />
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="/images/diesel.jpg"
-                    alt="Operación de carga de diesel"
-                  />
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="/images/premium.jpg"
-                    alt="Operación de despacho premium"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-            <Col lg={6} className="d-flex align-items-center">
-              <div>
-                <h2 className="display-5 fw-bold mb-4">Nuestra Flota Moderna</h2>
-                <p className="lead mb-4">
-                  Contamos con más de 20 camiones cisterna de última generación, 
-                  equipados con tecnología avanzada y sistemas de seguridad certificados.
-                </p>
-                <ul className="fleet-features">
-                  <li>Cumplimiento con estándares internacionales</li>
-                  <li>Sistemas de monitoreo GPS en tiempo real</li>
-                  <li>Personal altamente capacitado y certificado</li>
-                  <li>Controles de calidad en cada entrega</li>
-                </ul>
+      <section
+  className="fleet-section py-5"
+>
+  <Container>
+    <Row className="align-items-center">
+      <Col lg={6} className="mb-4">
+        <Carousel
+          className="shadow-lg rounded overflow-hidden fleet-carousel"
+          interval={3000} // cambia cada 3 segundos automáticamente
+          controls={true} //en true salen las flechas, y rn false  oculta flechas para cambiar imagenes
+          indicators={true} // muestra los puntitos abajo de las imageness
+          fade // transición suave
+        >
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/fleet-image.jpg"
+              alt="Flota moderna - unidad 1"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/cisterna-de-combustible.png"
+              alt="Operación de carga de diesel"
+            />
+          </Carousel.Item>
 
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/camionGas.jpg"
+              alt="Operación de despacho premium"
+            />
+          </Carousel.Item>
+
+           <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/abastecimiento-gasolina.jpg"
+              alt="Operación de despacho premium"
+            />
+          </Carousel.Item>
+           <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/transporte-de-combustible.jpg"
+              alt="Operación de despacho premium"
+            />
+          </Carousel.Item>
+        </Carousel>
+      </Col>
+
+      <Col lg={6} >
+        <div>
+          <h2 className="display-5 fw-bold mb-4">Nuestra Flota Moderna</h2>
+          <p className="lead mb-4 text-dark">
+            Contamos con más de 20 camiones cisterna de última generación, 
+            equipados con tecnología avanzada y sistemas de seguridad certificados.
+          </p>
+          <ul className="fleet-features text-dark">
+            <li>Cumplimiento con estándares internacionales</li>
+            <li>Sistemas de monitoreo GPS en tiempo real</li>
+            <li>Personal altamente capacitado y certificado</li>
+            <li>Controles de calidad en cada entrega</li>
+          </ul>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
 
       <section className="products-section py-5 bg-light">
         <Container>
@@ -295,73 +320,164 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="why-section py-5 bg-white">
-        <Container>
-          <h2 className="section-title text-center mb-5">¿Por Qué Elegir FuelFlow?</h2>
-          <Row className="g-4">
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">⚡</div>
-                <h4 className="mt-3">Entrega Rápida</h4>
-                <p className="text-muted">
-                  Entregamos en menos de 2 horas en la mayoría de los casos. 
-                  Tu tiempo es valioso, lo respetamos.
-                </p>
-              </div>
-            </Col>
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">💳</div>
-                <h4 className="mt-3">Precios Competitivos</h4>
-                <p className="text-muted">
-                  Ofrecemos los mejores precios del mercado sin comprometer 
-                  la calidad del producto.
-                </p>
-              </div>
-            </Col>
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">🏆</div>
-                <h4 className="mt-3">Calidad Certificada</h4>
-                <p className="text-muted">
-                  Todos nuestros combustibles cumplen con los estándares 
-                  internacionales más estrictos.
-                </p>
-              </div>
-            </Col>
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">🛡️</div>
-                <h4 className="mt-3">Seguridad Garantizada</h4>
-                <p className="text-muted">
-                  Flota moderna con sistemas de seguridad avanzados 
-                  y personal completamente capacitado.
-                </p>
-              </div>
-            </Col>
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">📞</div>
-                <h4 className="mt-3">Atención 24/7</h4>
-                <p className="text-muted">
-                  Estamos disponibles día y noche, los 365 días del año 
-                  para atender tus necesidades.
-                </p>
-              </div>
-            </Col>
-            <Col md={6} lg={4}>
-              <div className="why-card p-4">
-                <div className="why-icon">🎯</div>
-                <h4 className="mt-3">Confianza</h4>
-                <p className="text-muted">
-                  Más de 500 clientes satisfechos nos respaldan. 
-                  Tu satisfacción es nuestra prioridad.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+ <section className="services-section py-5">
+  <Container>
+    <h2 className="section-title text-center mb-5 fw-bold text-dark">
+      Nuestros <span className="text-primary">Servicios</span>
+    </h2>
+
+    <Row className="g-4">
+      {/* Servicio 1 */}
+      <Col md={6} lg={4}>
+        <div className="service-card shadow-sm rounded-4 overflow-hidden">
+          <div className="service-image">
+            <img
+              src="/images/llenado-barco.jpg"
+              alt="Servicio de Llenado para Barcos"
+              className="img-fluid w-100"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <h4 className="fw-bold mb-2">Llenado para Barcos</h4>
+            <p className="text-muted">
+              Abastecemos combustible de forma segura y rápida directamente en muelles y embarcaciones.
+            </p>
+          </div>
+        </div>
+      </Col>
+
+      {/* Servicio 2 */}
+      <Col md={6} lg={4}>
+        <div className="service-card shadow-sm rounded-4 overflow-hidden">
+          <div className="service-image">
+            <img
+              src="/images/camion-deliverys.jpg"
+              alt="Servicio de Delivery"
+              className="img-fluid w-100"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <h4 className="fw-bold mb-2">Servicio de Delivery</h4>
+            <p className="text-muted">
+              Llevamos el combustible directamente a tu ubicación, con tiempos de entrega garantizados.
+            </p>
+          </div>
+        </div>
+      </Col>
+
+      {/* Servicio 3 */}
+      <Col md={6} lg={4}>
+        <div className="service-card shadow-sm rounded-4 overflow-hidden">
+          <div className="service-image">
+            <img
+              src="/images/delivery-empresas.jpg"
+              alt="Abastecimiento a Empresas"
+              className="img-fluid w-100"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <h4 className="fw-bold mb-2">Abastecimiento a Empresas</h4>
+            <p className="text-muted">
+              Ofrecemos soluciones personalizadas de entrega y almacenamiento para flotas, fábricas y estaciones.
+            </p>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
+
+
+      <section
+  className="why-section py-5"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('/images/fuel-texture.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  <Container>
+    <h2 className="section-title text-center mb-5 fw-bold text-dark">
+      ¿Por Qué Elegir <span className="text-primary">FuelFlow</span>?
+    </h2>
+    <Row className="g-4">
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
+            <i className="fas fa-bolt fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Entrega Rápida</h4>
+          <p className="text-muted">
+            Entregamos en menos de 2 horas en la mayoría de los casos. Tu tiempo es valioso, lo respetamos.
+          </p>
+        </div>
+      </Col>
+
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-success bg-opacity-10 text-success mx-auto mb-3">
+            <i className="fas fa-tags fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Precios Competitivos</h4>
+          <p className="text-muted">
+            Ofrecemos los mejores precios del mercado sin comprometer la calidad del producto.
+          </p>
+        </div>
+      </Col>
+
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-warning bg-opacity-10 text-warning mx-auto mb-3">
+            <i className="fas fa-certificate fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Calidad Certificada</h4>
+          <p className="text-muted">
+            Todos nuestros combustibles cumplen con los estándares internacionales más estrictos.
+          </p>
+        </div>
+      </Col>
+
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-danger bg-opacity-10 text-danger mx-auto mb-3">
+            <i className="fas fa-shield-alt fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Seguridad Garantizada</h4>
+          <p className="text-muted">
+            Flota moderna con sistemas de seguridad avanzados y personal completamente capacitado.
+          </p>
+        </div>
+      </Col>
+
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-info bg-opacity-10 text-info mx-auto mb-3">
+            <i className="fas fa-headset fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Atención 24/7</h4>
+          <p className="text-muted">
+            Estamos disponibles día y noche, los 365 días del año para atender tus necesidades.
+          </p>
+        </div>
+      </Col>
+
+      <Col md={6} lg={4}>
+        <div className="why-card p-4 shadow-sm rounded-4 text-center">
+          <div className="why-icon-wrapper bg-secondary bg-opacity-10 text-secondary mx-auto mb-3">
+            <i className="fas fa-handshake fa-2x"></i>
+          </div>
+          <h4 className="fw-bold mb-2">Confianza</h4>
+          <p className="text-muted">
+            Más de 500 clientes satisfechos nos respaldan. Tu satisfacción es nuestra prioridad.
+          </p>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
 
       <section className="form-section py-5" id="formulario">
         <Container>
