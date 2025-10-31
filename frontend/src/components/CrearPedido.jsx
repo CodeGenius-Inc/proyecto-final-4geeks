@@ -18,16 +18,62 @@ const CrearPedido = ({ onPedidoCreado }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+    
+    if (name === 'telefono') {
+      const onlyNumbers = value.replace(/\D/g, '')
+      setFormData({
+        ...formData,
+        [name]: onlyNumbers,
+      })
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
     setMensaje({ texto: '', tipo: '' })
+
+    if (!formData.nombre_cliente.trim()) {
+      setMensaje({ texto: '❌ El nombre del cliente es obligatorio', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
+
+    if (!formData.telefono.trim()) {
+      setMensaje({ texto: '❌ El teléfono es obligatorio', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
+
+    if (formData.telefono.length < 8) {
+      setMensaje({ texto: '❌ El teléfono debe tener al menos 8 dígitos', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
+
+    if (!formData.direccion.trim()) {
+      setMensaje({ texto: '❌ La dirección es obligatoria', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
+
+    if (!formData.tipo_combustible) {
+      setMensaje({ texto: '❌ El tipo de combustible es obligatorio', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
+
+    if (!formData.cantidad || parseFloat(formData.cantidad) < 100) {
+      setMensaje({ texto: '❌ La cantidad mínima es 100 galones', tipo: 'danger' })
+      setIsLoading(false)
+      return
+    }
 
     try {
       const pedidoData = {
@@ -111,8 +157,13 @@ const CrearPedido = ({ onPedidoCreado }) => {
                       value={formData.telefono}
                       onChange={handleChange}
                       required
-                      placeholder="Ingrese el teléfono de contacto"
+                      placeholder="Ingrese solo números"
+                      minLength={8}
+                      maxLength={15}
                     />
+                    <Form.Text className="text-muted">
+                      Solo números, mínimo 8 dígitos
+                    </Form.Text>
                   </Form.Group>
                 </Col>
               </Row>

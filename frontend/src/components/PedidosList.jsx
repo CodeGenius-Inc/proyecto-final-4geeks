@@ -83,14 +83,54 @@ const PedidosList = () => {
   }
 
   const handleEditChange = (e) => {
-    setEditFormData({
-      ...editFormData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+    
+    if (name === 'telefono') {
+      const onlyNumbers = value.replace(/\D/g, '')
+      setEditFormData({
+        ...editFormData,
+        [name]: onlyNumbers,
+      })
+    } else {
+      setEditFormData({
+        ...editFormData,
+        [name]: value,
+      })
+    }
   }
 
   const guardarEdicion = async (e) => {
     e.preventDefault()
+    
+    if (!editFormData.nombre_cliente.trim()) {
+      showAlert('danger', '❌ El nombre del cliente es obligatorio')
+      return
+    }
+
+    if (!editFormData.telefono.trim()) {
+      showAlert('danger', '❌ El teléfono es obligatorio')
+      return
+    }
+
+    if (editFormData.telefono.length < 8) {
+      showAlert('danger', '❌ El teléfono debe tener al menos 8 dígitos')
+      return
+    }
+
+    if (!editFormData.direccion.trim()) {
+      showAlert('danger', '❌ La dirección es obligatoria')
+      return
+    }
+
+    if (!editFormData.tipo_combustible) {
+      showAlert('danger', '❌ El tipo de combustible es obligatorio')
+      return
+    }
+
+    if (!editFormData.cantidad || parseFloat(editFormData.cantidad) < 100) {
+      showAlert('danger', '❌ La cantidad mínima es 100 galones')
+      return
+    }
     
     try {
       const datos = {
@@ -265,8 +305,13 @@ const PedidosList = () => {
                       value={editFormData.telefono}
                       onChange={handleEditChange}
                       required
-                      placeholder="Ingrese el teléfono de contacto"
+                      placeholder="Ingrese solo números"
+                      minLength={8}
+                      maxLength={15}
                     />
+                    <Form.Text className="text-muted">
+                      Solo números, mínimo 8 dígitos
+                    </Form.Text>
                   </Form.Group>
                 </Col>
               </Row>
@@ -293,10 +338,13 @@ const PedidosList = () => {
                       value={editFormData.cantidad}
                       onChange={handleEditChange}
                       required
-                      min="1"
-                      step="0.1"
-                      placeholder="Ingrese la cantidad en galones"
+                      min="100"
+                      step="1"
+                      placeholder="Mínimo 100 galones"
                     />
+                    <Form.Text className="text-muted">
+                      Mínimo: 100 galones
+                    </Form.Text>
                   </Form.Group>
                 </Col>
                 <Col md={6}>
