@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap'
+import { Container, Row, Col, Card, Form, Button, Alert, Carousel } from 'react-bootstrap'
 import { pedidosAPI } from '../services/api'
 import './Home.css'
 
@@ -192,7 +192,29 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg={6} className="mb-4">
-              <div className="fleet-image"></div>
+              <Carousel className="shadow rounded overflow-hidden fleet-carousel">
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="/images/fleet-image.jpg"
+                    alt="Flota moderna - unidad 1"
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="/images/diesel.jpg"
+                    alt="Operación de carga de diesel"
+                  />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="/images/premium.jpg"
+                    alt="Operación de despacho premium"
+                  />
+                </Carousel.Item>
+              </Carousel>
             </Col>
             <Col lg={6} className="d-flex align-items-center">
               <div>

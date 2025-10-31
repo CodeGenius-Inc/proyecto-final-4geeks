@@ -459,3 +459,21 @@
     font-size: 2rem;
   }
 }
+
+/* Carousel de flota: tamaño uniforme y recorte elegante */
+.fleet-carousel .carousel-item {
+  height: 380px;
+}
+
+.fleet-carousel img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .fleet-carousel .carousel-item,
+  .fleet-carousel img {
+    height: 420px;
+  }
+}
