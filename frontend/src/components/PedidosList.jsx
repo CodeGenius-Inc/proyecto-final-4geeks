@@ -56,11 +56,12 @@ const PedidosList = () => {
     setShowModal(true)
   }
 
-  const eliminarPedido = async (id) => {
-    if (!window.confirm('¿Estás seguro de eliminar este pedido?')) return
+  const eliminarPedido = async (pedido) => {
+    const nombre = pedido?.nombre_cliente || 'este cliente'
+    if (!window.confirm(`¿Está seguro que desea eliminar el pedido de ${nombre}?`)) return
 
     try {
-      await pedidosAPI.delete(id)
+      await pedidosAPI.delete(pedido.id)
       showAlert('success', 'Pedido eliminado correctamente')
       loadPedidos()
     } catch (error) {
@@ -256,7 +257,7 @@ const PedidosList = () => {
                       <Button size="sm" variant="success" onClick={() => cambiarEstado(pedido.id, 'en_ruta')}>
                         En Ruta
                       </Button>
-                      <Button size="sm" variant="danger" onClick={() => eliminarPedido(pedido.id)}>
+                      <Button size="sm" variant="danger" onClick={() => eliminarPedido(pedido)}>
                         ✕
                       </Button>
                     </div>
