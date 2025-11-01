@@ -243,7 +243,9 @@ const Home = () => {
 
       <Col lg={6} >
         <div>
-          <h2 className="display-5 fw-bold mb-4">Nuestra Flota Moderna</h2>
+          <h2 className="display-5 fw-bold mb-4">Nuestra
+            <span className="text-primary"> Flota Moderna</span>
+          </h2>
           <p className="lead mb-4 text-dark">
             Contamos con más de 20 camiones cisterna de última generación, 
             equipados con tecnología avanzada y sistemas de seguridad certificados.
@@ -264,7 +266,9 @@ const Home = () => {
       <section className="products-section py-5 bg-light">
         <Container>
           <div className="text-center mb-5">
-            <h2 className="section-title mb-3">Nuestros Productos</h2>
+            <h2 className="section-title mb-3">Nuestros 
+              <span className="text-primary"> Productos</span>
+            </h2>
             <p className="text-muted lead">Combustibles de alta calidad para todas tus necesidades</p>
           </div>
           <Row className="g-4 mb-5">
@@ -320,73 +324,90 @@ const Home = () => {
         </Container>
       </section>
 
- <section className="services-section py-5">
-  <Container>
-    <h2 className="section-title text-center mb-5 fw-bold text-dark">
-      Nuestros <span className="text-primary">Servicios</span>
-    </h2>
+ <section className="services-section py-5 bg-light"> 
+    <Container>
+      <div className="text-center mb-5">
+        <h2 className="section-title mb-3">Nuestros <span className="text-primary">Servicios</span></h2> 
+        
+        <p className="text-muted lead">Soluciones de abastecimiento a la medida de tus operaciones</p> 
+      </div>
 
-    <Row className="g-4">
-      {/* Servicio 1 */}
-      <Col md={6} lg={4}>
-        <div className="service-card shadow-sm rounded-4 overflow-hidden">
-          <div className="service-image">
-            <img
-              src="/images/llenado-barco.jpg"
-              alt="Servicio de Llenado para Barcos"
-              className="img-fluid w-100"
-            />
-          </div>
-          <div className="p-4 text-center">
-            <h4 className="fw-bold mb-2">Llenado para Barcos</h4>
-            <p className="text-muted">
-              Abastecemos combustible de forma segura y rápida directamente en muelles y embarcaciones.
-            </p>
-          </div>
-        </div>
-      </Col>
+      <Row className="g-4">
+        {/* Servicio 1 */}
+        <Col md={6} lg={4}>
+          <Card className="product-card h-100 border-0 shadow-sm"> 
+            <div className="service-image-container"> 
+              <img
+                src="/images/llenado-barco.jpg"
+                alt="Servicio de Llenado para Barcos"
+                className="img-fluid w-100"
+                style={{ height: '200px', objectFit: 'cover' }} 
+              />
+            </div>
+            <Card.Body className="text-center p-4"> 
+              <Card.Title className="h4 mt-3">Llenado para Barcos</Card.Title> 
+              <Card.Text className="text-muted">
+                Abastecemos combustible de forma segura y rápida directamente en muelles y embarcaciones.
+              </Card.Text>
+             
+              <div className="product-features mt-3"> 
+                <small className="text-muted">✓ Suministro seguro</small>
+                <small className="text-muted d-block">✓ Atención en muelles</small>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-      {/* Servicio 2 */}
-      <Col md={6} lg={4}>
-        <div className="service-card shadow-sm rounded-4 overflow-hidden">
-          <div className="service-image">
-            <img
-              src="/images/camion-deliverys.jpg"
-              alt="Servicio de Delivery"
-              className="img-fluid w-100"
-            />
-          </div>
-          <div className="p-4 text-center">
-            <h4 className="fw-bold mb-2">Servicio de Delivery</h4>
-            <p className="text-muted">
-              Llevamos el combustible directamente a tu ubicación, con tiempos de entrega garantizados.
-            </p>
-          </div>
-        </div>
-      </Col>
+        {/* Servicio 2 */}
+        <Col md={6} lg={4}>
+          <Card className="product-card h-100 border-0 shadow-sm"> 
+            <div className="service-image-container">
+              <img
+                src="/images/camion-deliverys.jpg"
+                alt="Servicio de Delivery"
+                className="img-fluid w-100"
+                style={{ height: '200px', objectFit: 'cover' }}
+              />
+            </div>
+            <Card.Body className="text-center p-4">
+              <Card.Title className="h4 mt-3">Servicio de Delivery</Card.Title>
+              <Card.Text className="text-muted">
+                Llevamos el combustible directamente a tu ubicación, con tiempos de entrega garantizados.
+              </Card.Text>
+              <div className="product-features mt-3">
+                <small className="text-muted">✓ Entregas programadas</small>
+                <small className="text-muted d-block">✓ Cobertura amplia</small>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-      {/* Servicio 3 */}
-      <Col md={6} lg={4}>
-        <div className="service-card shadow-sm rounded-4 overflow-hidden">
-          <div className="service-image">
-            <img
-              src="/images/delivery-empresas.jpg"
-              alt="Abastecimiento a Empresas"
-              className="img-fluid w-100"
-            />
-          </div>
-          <div className="p-4 text-center">
-            <h4 className="fw-bold mb-2">Abastecimiento a Empresas</h4>
-            <p className="text-muted">
-              Ofrecemos soluciones personalizadas de entrega y almacenamiento para flotas, fábricas y estaciones.
-            </p>
-          </div>
-        </div>
-      </Col>
-    </Row>
-  </Container>
-</section>
-
+        {/* Servicio 3 */}
+        <Col md={6} lg={4}>
+          <Card className="product-card h-100 border-0 shadow-sm"> 
+            <div className="service-image-container">
+              <img
+                src="/images/delivery-empresas.jpg"
+                alt="Abastecimiento a Empresas"
+                className="img-fluid w-100"
+                style={{ height: '200px', objectFit: 'cover' }}
+              />
+            </div>
+            <Card.Body className="text-center p-4">
+              <Card.Title className="h4 mt-3">Abastecimiento a Empresas</Card.Title>
+              <Card.Text className="text-muted">
+                Ofrecemos soluciones personalizadas de entrega y almacenamiento para flotas, fábricas y estaciones.
+              </Card.Text>
+              <div className="product-features mt-3">
+                <small className="text-muted">✓ Soluciones B2B</small>
+                <small className="text-muted d-block">✓ Precios mayoristas</small>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  </section>
 
 
       <section
@@ -417,7 +438,7 @@ const Home = () => {
 
       <Col md={6} lg={4}>
         <div className="why-card p-4 shadow-sm rounded-4 text-center">
-          <div className="why-icon-wrapper bg-success bg-opacity-10 text-success mx-auto mb-3">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
             <i className="fas fa-tags fa-2x"></i>
           </div>
           <h4 className="fw-bold mb-2">Precios Competitivos</h4>
@@ -429,7 +450,7 @@ const Home = () => {
 
       <Col md={6} lg={4}>
         <div className="why-card p-4 shadow-sm rounded-4 text-center">
-          <div className="why-icon-wrapper bg-warning bg-opacity-10 text-warning mx-auto mb-3">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
             <i className="fas fa-certificate fa-2x"></i>
           </div>
           <h4 className="fw-bold mb-2">Calidad Certificada</h4>
@@ -441,7 +462,7 @@ const Home = () => {
 
       <Col md={6} lg={4}>
         <div className="why-card p-4 shadow-sm rounded-4 text-center">
-          <div className="why-icon-wrapper bg-danger bg-opacity-10 text-danger mx-auto mb-3">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
             <i className="fas fa-shield-alt fa-2x"></i>
           </div>
           <h4 className="fw-bold mb-2">Seguridad Garantizada</h4>
@@ -453,7 +474,7 @@ const Home = () => {
 
       <Col md={6} lg={4}>
         <div className="why-card p-4 shadow-sm rounded-4 text-center">
-          <div className="why-icon-wrapper bg-info bg-opacity-10 text-info mx-auto mb-3">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
             <i className="fas fa-headset fa-2x"></i>
           </div>
           <h4 className="fw-bold mb-2">Atención 24/7</h4>
@@ -465,7 +486,7 @@ const Home = () => {
 
       <Col md={6} lg={4}>
         <div className="why-card p-4 shadow-sm rounded-4 text-center">
-          <div className="why-icon-wrapper bg-secondary bg-opacity-10 text-secondary mx-auto mb-3">
+          <div className="why-icon-wrapper bg-primary bg-opacity-10 text-primary mx-auto mb-3">
             <i className="fas fa-handshake fa-2x"></i>
           </div>
           <h4 className="fw-bold mb-2">Confianza</h4>
