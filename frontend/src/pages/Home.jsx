@@ -263,7 +263,7 @@ const Home = () => {
 </section>
 
 
-      <section className="products-section py-5 bg-light">
+      <section className="products-section py-5">
         <Container>
           <div className="text-center mb-5">
             <h2 className="section-title mb-3">Nuestros 
@@ -324,7 +324,7 @@ const Home = () => {
         </Container>
       </section>
 
- <section className="services-section py-5 bg-light"> 
+ <section className="services-section py-5"> 
     <Container>
       <div className="text-center mb-5">
         <h2 className="section-title mb-3">Nuestros <span className="text-primary">Servicios</span></h2> 
@@ -410,15 +410,7 @@ const Home = () => {
   </section>
 
 
-      <section
-  className="why-section py-5"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('/images/fuel-texture.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
+      <section className="why-section py-5">
   <Container>
     <h2 className="section-title text-center mb-5 fw-bold text-dark">
       ¿Por Qué Elegir <span className="text-primary">FuelFlow</span>?
@@ -502,7 +494,7 @@ const Home = () => {
 
       <section className="form-section py-5" id="formulario">
         <Container>
-          <h2 className="section-title text-center mb-4">Solicita tu Entrega</h2>
+          <h2 className="section-title text-center mb-4">Solicita tu <span className="text-primary">Entrega</span></h2>
           <p className="text-center text-muted mb-5">Completa el formulario y nos pondremos en contacto contigo</p>
           <Row className="justify-content-center">
             <Col lg={8}>

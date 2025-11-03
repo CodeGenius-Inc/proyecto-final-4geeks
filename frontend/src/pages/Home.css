@@ -171,7 +171,7 @@
 
 /* Services Section */
 .services-section {
-  background: #f8f9fa;
+  background: white;
 }
 
 [data-theme='dark'] .services-section {
@@ -199,6 +199,11 @@
 [data-theme='dark'] .why-card h4,
 [data-theme='dark'] .why-card p {
   color: #e0e0e0 !important;
+}
+
+/* Why Section */
+.why-section {
+  background: white;
 }
 
 [data-theme='dark'] .why-section {
@@ -410,26 +415,6 @@
   margin-right: 0.5rem;
 }
 
-/* servicios */
-.services-section {
-  background: rgba(255, 255, 255, 0.95);
-  color: #212529;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-[data-bs-theme="dark"] .services-section {
-  background: rgba(20, 20, 20, 0.9);
-  color: #f8f9fa;
-}
-
-[data-bs-theme="dark"] .service-card {
-  background: rgba(40, 40, 40, 0.9);
-  border-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-bs-theme="dark"] .service-card:hover {
-  background: rgba(60, 60, 60, 0.95);
-}
 
 /* Product Cards */
 .product-card-image {
@@ -486,7 +471,7 @@
 
 /* Products Section */
 .products-section {
-  background: #f8f9fa;
+  background: white;
 }
 
 /* Responsive */
