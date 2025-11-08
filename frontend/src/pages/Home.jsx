@@ -159,7 +159,17 @@ const Home = () => {
                 </div>
               </div>
               <div className="contact-info animate-slide-up-delay-2">
-                <Button variant="light" size="lg" className="me-3 btn-hero" href="#formulario">
+                <Button
+                  variant="light"
+                  size="lg"
+                  className="me-3 btn-hero"
+                  onClick={() => {
+                    const formulario = document.getElementById('formulario')
+                    if (formulario) {
+                      formulario.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    }
+                  }}
+                >
                   Solicitar Entrega Ahora
                 </Button>
                 <div className="phone-number-hero">
