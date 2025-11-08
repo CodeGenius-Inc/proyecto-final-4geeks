@@ -9,6 +9,7 @@ ENV/
 .venv
 
 .env
+.env.neon
 *.log
 
 
