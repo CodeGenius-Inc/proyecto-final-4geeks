@@ -109,20 +109,22 @@
 .dashboard-main {
   flex: 1;
   margin-left: 260px;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 .dashboard-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(0.75rem, 2vw, 1rem);
   border-bottom: 2px solid #e2e8f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .dashboard-title {
-  font-size: 1.8rem;
+  font-size: clamp(1.25rem, 4vw, 1.8rem);
   font-weight: 700;
   color: #2d3748;
   margin: 0;
@@ -144,9 +146,9 @@
 .dashboard-content {
   background: white;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  min-height: 600px;
+  min-height: 400px;
 }
 
 .theme-toggle {
@@ -175,9 +177,13 @@
   border-bottom-color: #404040;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .dashboard-sidebar {
-    width: 60px;
+    width: 70px;
+  }
+
+  .sidebar-header {
+    padding: 1rem 0.5rem;
   }
 
   .sidebar-header h4,
@@ -186,20 +192,88 @@
     display: none;
   }
 
+  .nav-item {
+    padding: 1rem 0.5rem;
+    justify-content: center;
+  }
+
   .nav-icon {
     margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .nav-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .sidebar-footer {
+    padding: 1rem 0.5rem;
   }
 
   .sidebar-footer .user-info p {
-    font-size: 0.7rem;
+    display: none;
+  }
+
+  .sidebar-footer .btn {
+    font-size: 0;
+    padding: 0.5rem;
+  }
+
+  .sidebar-footer .btn::after {
+    content: '🚪';
+    font-size: 1.2rem;
+  }
+
+  .dashboard-main {
+    margin-left: 70px;
+  }
+
+  .dashboard-title {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+  }
+
+  .theme-toggle-dashboard {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-sidebar {
+    width: 60px;
+  }
+
+  .nav-icon {
+    font-size: 1.3rem;
   }
 
   .dashboard-main {
     margin-left: 60px;
-    padding: 1rem;
+    padding: 0.75rem;
+  }
+
+  .dashboard-header {
+    gap: 0.5rem;
+  }
+
+  .dashboard-title {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+
+  .theme-toggle-dashboard {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 
   .dashboard-content {
-    padding: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    min-height: 300px;
   }
 }

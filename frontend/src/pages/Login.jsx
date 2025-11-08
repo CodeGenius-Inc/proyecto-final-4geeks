@@ -60,15 +60,15 @@ const Login = () => {
     <div className="min-vh-100 d-flex align-items-center bg-light">
       <Container>
         <Row className="justify-content-center">
-          <Col md={5}>
+          <Col xs={12} sm={10} md={8} lg={5}>
             <Card className="shadow-lg">
-              <Card.Header className="bg-primary text-white text-center py-4">
+              <Card.Header className="bg-primary text-white text-center py-3 py-md-4">
                 <div className="d-flex align-items-center justify-content-center mb-2">
-                  <h3 className="mb-0" style={{ fontSize: '2rem', fontWeight: '700' }}>⛽ FuelFlow</h3>
+                  <h3 className="mb-0" style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontWeight: '700' }}>⛽ FuelFlow</h3>
                 </div>
-                <small className="text-white-50" style={{ fontSize: '1rem' }}>Panel de Administración</small>
+                <small className="text-white-50" style={{ fontSize: 'clamp(0.875rem, 3vw, 1rem)' }}>Panel de Administración</small>
               </Card.Header>
-              <Card.Body className="p-5">
+              <Card.Body className="p-3 p-md-5">
                 {error && (
                   <Alert variant="danger" dismissible onClose={() => setError('')}>
                     {error}
@@ -76,38 +76,38 @@ const Login = () => {
                 )}
 
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-4">
-                    <Form.Label className="fw-semibold" style={{ fontSize: '1.1rem' }}>Usuario</Form.Label>
+                  <Form.Group className="mb-3 mb-md-4">
+                    <Form.Label className="fw-semibold" style={{ fontSize: 'clamp(1rem, 3vw, 1.1rem)' }}>Usuario</Form.Label>
                     <Form.Control
                       type="text"
                       name="username"
                       value={formData.username}
                       onChange={handleChange}
                       required
-                      style={{ fontSize: '1.1rem', padding: '0.75rem 1rem' }}
+                      style={{ fontSize: 'clamp(1rem, 3vw, 1.1rem)', padding: 'clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1rem)' }}
                       placeholder="Ingresa tu usuario"
                     />
                   </Form.Group>
 
-                  <Form.Group className="mb-4">
-                    <Form.Label className="fw-semibold" style={{ fontSize: '1.1rem' }}>Contraseña</Form.Label>
+                  <Form.Group className="mb-3 mb-md-4">
+                    <Form.Label className="fw-semibold" style={{ fontSize: 'clamp(1rem, 3vw, 1.1rem)' }}>Contraseña</Form.Label>
                     <Form.Control
                       type="password"
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
                       required
-                      style={{ fontSize: '1.1rem', padding: '0.75rem 1rem' }}
+                      style={{ fontSize: 'clamp(1rem, 3vw, 1.1rem)', padding: 'clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1rem)' }}
                       placeholder="Ingresa tu contraseña"
                     />
                   </Form.Group>
 
                   <div className="d-grid">
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       disabled={isLoading}
-                      style={{ fontSize: '1.1rem', fontWeight: '600' }}
+                      style={{ fontSize: 'clamp(1rem, 3vw, 1.1rem)', fontWeight: '600', padding: 'clamp(0.5rem, 2vw, 0.75rem)' }}
                     >
                       {isLoading ? '⏳ Verificando...' : '🚀 Iniciar Sesión'}
                     </Button>
