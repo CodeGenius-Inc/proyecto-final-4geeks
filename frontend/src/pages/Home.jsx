@@ -604,7 +604,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-center mt-3">
-                      <a href="/login" className="text-decoration-none text-muted fw-bold">
+                      <a href="#/login" className="text-decoration-none text-muted fw-bold">
                         🛡️ ¿Eres administrador?
                       </a>
                     </div>
