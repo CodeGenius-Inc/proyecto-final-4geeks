@@ -28,7 +28,6 @@
   background-color: #fee !important;
 }
 
-/* Tema Oscuro */
 [data-theme='dark'] .filters-card {
   background: transparent !important;
   box-shadow: none;
@@ -91,7 +90,6 @@
   color: #ffffff !important;
 }
 
-/* Modal en tema oscuro */
 [data-theme='dark'] .modal-content {
   background: #2d2d2d !important;
   border-color: #404040 !important;
@@ -121,7 +119,6 @@
   filter: invert(1);
 }
 
-/* Modal de Detalle - Estilos mejorados */
 .pedido-detail-card {
   padding: 0.5rem;
 }
@@ -177,7 +174,6 @@
   border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
-/* Estilos para modo oscuro */
 [data-theme='dark'] .detail-item {
   background: #3a3a3a;
   border-left-color: #667eea;

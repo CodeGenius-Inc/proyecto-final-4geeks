@@ -25,7 +25,6 @@
   box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
 
-/* Tema Oscuro */
 [data-theme='dark'] .form-card {
   background: #2d2d2d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -48,4 +47,6 @@
   border-color: #667eea;
   color: #e0e0e0;
 }
+
+
 

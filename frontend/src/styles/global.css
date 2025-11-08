@@ -189,9 +189,6 @@ body {
   animation: slideIn var(--transition-base);
 }
 
-/* =============================================
-   UTILIDADES
-   ============================================= */
 .glass-effect {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -213,9 +210,6 @@ body {
   transform: translateY(-4px);
 }
 
-/* =============================================
-   RESPONSIVE
-   ============================================= */
 @media (max-width: 768px) {
   :root {
     --spacing-lg: 1rem;

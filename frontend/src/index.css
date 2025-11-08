@@ -31,7 +31,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema Oscuro */
 [data-theme='dark'] {
   background: #1a1a1a;
   color: #e0e0e0;
@@ -42,7 +41,6 @@ body {
   color: #e0e0e0;
 }
 
-/* Estilos para tema oscuro */
 [data-theme='dark'] .bg-light {
   background-color: #1a1a1a !important;
 }
@@ -160,7 +158,6 @@ body {
   color: #bae6fd !important;
 }
 
-/* Urgencia de pedidos */
 .urgencia-normal {
   background-color: #d4edda !important;
   border-left: 4px solid #28a745 !important;
@@ -176,7 +173,6 @@ body {
   border-left: 4px solid #dc3545 !important;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -192,7 +188,6 @@ body {
   animation: fadeIn 0.3s ease-in;
 }
 
-/* Estados de pedidos */
 .badge-pendiente {
   background-color: #6c757d;
 }

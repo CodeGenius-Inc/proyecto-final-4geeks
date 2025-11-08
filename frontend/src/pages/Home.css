@@ -2,10 +2,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Hero Section */
-
-
-
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -126,7 +122,6 @@
   font-weight: 500;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -169,7 +164,6 @@
   animation-fill-mode: both;
 }
 
-/* Services Section */
 .services-section {
   background: white;
 }
@@ -201,7 +195,6 @@
   color: #e0e0e0 !important;
 }
 
-/* Why Section */
 .why-section {
   background: white;
 }
@@ -245,7 +238,6 @@
   background-blend-mode: normal;
 }
 
-/* Mejoras de contraste para cards de productos */
 [data-theme='dark'] .product-card {
   background-color: #3a3a3a;
   border-color: #555;
@@ -260,7 +252,6 @@
   color: #b0b0b0;
 }
 
-/* Fleet features en tema oscuro */
 [data-theme='dark'] .fleet-features li {
   color: #e0e0e0;
 }
@@ -305,12 +296,10 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-/* Form Section */
 .form-section {
   background: white;
 }
 
-/* Form Styles */
 .form-control:focus,
 .form-select:focus {
   border-color: #667eea;
@@ -340,14 +329,10 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Card Styles */
 .card {
   border-radius: 12px;
   overflow: hidden;
 }
-
-
-/* servicios */ 
 
 .service-card {
   background: rgba(255, 255, 255, 0.9);
@@ -369,7 +354,6 @@
   transform: scale(1.05);
 }
 
-/* Fleet Section */
 .fleet-section {
   background: white;
 }
@@ -415,8 +399,6 @@
   margin-right: 0.5rem;
 }
 
-
-/* Product Cards */
 .product-card-image {
   height: 200px;
   background-size: cover;
@@ -447,7 +429,6 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* por que elegir fuelflow Section */
 .why-card {
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.85);
@@ -469,12 +450,10 @@
   justify-content: center;
 }
 
-/* Products Section */
 .products-section {
   background: white;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-section {
     min-height: 80vh;
@@ -502,7 +481,6 @@
   }
 }
 
-/* Carousel de flota: tamaño uniforme y recorte elegante */
 .fleet-carousel .carousel-item {
   height: 380px;
 }

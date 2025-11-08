@@ -5,7 +5,6 @@ const ScrollToTop = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    // Scroll suave al inicio cuando cambia la ruta
     window.scrollTo({
       top: 0,
       left: 0,
@@ -13,7 +12,6 @@ const ScrollToTop = () => {
     })
   }, [pathname])
 
-  // También hacer scroll al inicio cuando se carga la página
   useEffect(() => {
     window.scrollTo({
       top: 0,

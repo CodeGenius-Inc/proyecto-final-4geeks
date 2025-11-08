@@ -18,12 +18,10 @@ function App() {
           <ThemeToggle />
           <ScrollToTopButton />
           <Routes>
-            {/* Rutas públicas */}
             <Route element={<PublicLayout />}>
               <Route path="/" element={<Home />} />
             </Route>
             
-            {/* Rutas privadas - Admin */}
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
           </Routes>

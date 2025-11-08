@@ -121,8 +121,6 @@ def get_or_create_cliente(nombre, telefono, direccion):
         cursor.close()
         conn.close()
 
-# ============ FUNCIONES PRINCIPALES ============
-
 def init_db():
     conn = get_connection()
     if not conn:
@@ -131,7 +129,7 @@ def init_db():
     cursor = conn.cursor()
     
     try:
-        # Verificar que existe la tabla administrador
+
         cursor.execute("""
             SELECT COUNT(*) FROM information_schema.tables 
             WHERE table_name = 'administrador'
@@ -142,7 +140,6 @@ def init_db():
         
         conn.commit()
         
-        # Crear usuario admin por defecto si no existe
         cursor.execute("SELECT COUNT(*) FROM administrador WHERE usuario = 'admin'")
         if cursor.fetchone()[0] == 0:
             cursor.execute("""
@@ -158,7 +155,6 @@ def init_db():
         conn.close()
 
 def get_pedidos(estado=None, limit=None, offset=None):
-    """Obtiene pedidos de la base de datos con JOIN a las tablas relacionadas"""
     conn = get_connection()
     if not conn:
         return []
@@ -186,7 +182,6 @@ def get_pedidos(estado=None, limit=None, offset=None):
         params = []
         
         if estado:
-            # Normalizar estado según valores en la BD
             estado_normalizado = {
                 'pendiente': 'Pendiente',
                 'en_ruta': 'En_Ruta',
@@ -213,7 +208,6 @@ def get_pedidos(estado=None, limit=None, offset=None):
         pedidos = []
         for row in results:
             pedido = dict(zip(columns, row))
-            # Asegurarse de que todos los campos necesarios estén presentes
             if 'estado' not in pedido or pedido['estado'] is None:
                 pedido['estado'] = 'pendiente'
             pedidos.append(pedido)
@@ -226,7 +220,6 @@ def get_pedidos(estado=None, limit=None, offset=None):
         conn.close()
 
 def get_pedido_by_id(id):
-    """Obtiene un pedido por su ID con JOIN a las tablas relacionadas"""
     conn = get_connection()
     if not conn:
         return None
@@ -258,7 +251,6 @@ def get_pedido_by_id(id):
         
         if row:
             pedido = dict(zip(columns, row))
-            # Asegurar que el estado esté presente
             if 'estado' not in pedido or pedido['estado'] is None:
                 pedido['estado'] = 'pendiente'
             return pedido
@@ -276,7 +268,6 @@ def create_pedido(pedido_data):
     
     cursor = conn.cursor()
     try:
-        # Obtener IDs de las tablas de referencia
         cliente_id = get_or_create_cliente(
             pedido_data['nombre_cliente'],
             pedido_data['telefono'],
@@ -291,10 +282,8 @@ def create_pedido(pedido_data):
         if not tipo_combustible_id:
             raise Exception("No se pudo obtener tipo_combustible_id")
         
-        # Convertir cantidad a entero (en tu BD es integer, no decimal)
         cantidad = int(float(pedido_data['cantidad']))
         
-        # Mapear urgencia
         urgencia_map = {
             'normal': 'Normal',
             'urgente': 'Urgente',
@@ -302,7 +291,6 @@ def create_pedido(pedido_data):
         }
         urgencia = urgencia_map.get(pedido_data.get('nivel_urgencia', 'normal'), 'Normal')
         
-        # Insertar pedido
         cursor.execute("""
             INSERT INTO pedidos (
                 cliente_id, tipo_combustible_id, estado_pedido_id,
@@ -312,7 +300,7 @@ def create_pedido(pedido_data):
         """, (
             cliente_id,
             tipo_combustible_id,
-            1,  # Estado inicial: Pendiente
+            1,
             cantidad,
             urgencia,
             pedido_data.get('observaciones', '')
@@ -330,7 +318,6 @@ def create_pedido(pedido_data):
         conn.close()
 
 def update_pedido(id, pedido_data):
-    """Actualiza un pedido existente"""
     conn = get_connection()
     if not conn:
         return None
@@ -381,7 +368,6 @@ def update_pedido(id, pedido_data):
         conn.close()
 
 def delete_pedido(id):
-    """Elimina un pedido"""
     conn = get_connection()
     if not conn:
         return False
@@ -399,16 +385,13 @@ def delete_pedido(id):
         conn.close()
 
 def cambiar_estado_pedido(id, nuevo_estado):
-    """Cambia el estado de un pedido"""
     conn = get_connection()
     if not conn:
         return None
     
     cursor = conn.cursor()
     try:
-        # Convertir estado a ID
         estado_id = get_estado_pedido_id(nuevo_estado)
-        
         update_query = "UPDATE pedidos SET estado_pedido_id = %s"
         
         if nuevo_estado.lower() == 'completado' or nuevo_estado == 'Completado':
@@ -427,14 +410,12 @@ def cambiar_estado_pedido(id, nuevo_estado):
         conn.close()
 
 def get_estadisticas():
-    """Obtiene estadísticas de pedidos"""
     conn = get_connection()
     if not conn:
         return {}
     
     cursor = conn.cursor()
     try:
-        # Pedidos pendientes
         cursor.execute("""
             SELECT COUNT(*) FROM pedidos p
             JOIN estado_pedido ep ON p.estado_pedido_id = ep.estado_pedido_id
@@ -442,7 +423,6 @@ def get_estadisticas():
         """)
         pendientes = cursor.fetchone()[0]
         
-        # Completados hoy
         cursor.execute("""
             SELECT COUNT(*) FROM pedidos 
             WHERE fecha_entrega IS NOT NULL 
@@ -450,7 +430,6 @@ def get_estadisticas():
         """)
         completados_hoy = cursor.fetchone()[0]
         
-        # Completados esta semana
         cursor.execute("""
             SELECT COUNT(*) FROM pedidos 
             WHERE fecha_entrega IS NOT NULL
@@ -458,7 +437,6 @@ def get_estadisticas():
         """)
         completados_semana = cursor.fetchone()[0]
         
-        # Top combustibles
         cursor.execute("""
             SELECT tc.tipo_combustible::text, COUNT(*) as cantidad
             FROM pedidos p
@@ -485,7 +463,6 @@ def get_estadisticas():
         conn.close()
 
 def buscar_pedidos(termino):
-    """Busca pedidos por término"""
     conn = get_connection()
     if not conn:
         return []
@@ -533,7 +510,6 @@ def buscar_pedidos(termino):
         conn.close()
 
 def verificar_usuario(username, password):
-    """Verifica credenciales de usuario usando la tabla administrador"""
     conn = get_connection()
     if not conn:
         return None

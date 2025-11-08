@@ -149,12 +149,10 @@
   min-height: 600px;
 }
 
-/* Ajuste para el botón de tema en dashboard */
 .theme-toggle {
   z-index: 1001 !important;
 }
 
-/* Tema Oscuro para Dashboard */
 [data-theme='dark'] .dashboard-container {
   background: #1a1a1a;
 }
@@ -169,7 +167,6 @@
   color: #ffffff;
 }
 
-
 [data-theme='dark'] .dashboard-title {
   color: #ffffff;
 }
@@ -178,7 +175,6 @@
   border-bottom-color: #404040;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .dashboard-sidebar {
     width: 60px;

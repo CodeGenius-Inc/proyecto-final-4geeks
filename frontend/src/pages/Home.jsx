@@ -188,18 +188,16 @@ const Home = () => {
         </Container>
       </section>
 
-      <section
-  className="fleet-section py-5"
->
+      <section className="fleet-section py-5">
   <Container>
     <Row className="align-items-center">
       <Col lg={6} className="mb-4">
         <Carousel
           className="shadow-lg rounded overflow-hidden fleet-carousel"
-          interval={3000} // cambia cada 3 segundos automáticamente
-          controls={true} //en true salen las flechas, y rn false  oculta flechas para cambiar imagenes
-          indicators={true} // muestra los puntitos abajo de las imageness
-          fade // transición suave
+          interval={3000}
+          controls={true}
+          indicators={true}
+          fade
         >
           <Carousel.Item>
             <img
@@ -333,7 +331,6 @@ const Home = () => {
       </div>
 
       <Row className="g-4">
-        {/* Servicio 1 */}
         <Col md={6} lg={4}>
           <Card className="product-card h-100 border-0 shadow-sm"> 
             <div className="service-image-container"> 
@@ -358,7 +355,6 @@ const Home = () => {
           </Card>
         </Col>
 
-        {/* Servicio 2 */}
         <Col md={6} lg={4}>
           <Card className="product-card h-100 border-0 shadow-sm"> 
             <div className="service-image-container">
@@ -382,7 +378,6 @@ const Home = () => {
           </Card>
         </Col>
 
-        {/* Servicio 3 */}
         <Col md={6} lg={4}>
           <Card className="product-card h-100 border-0 shadow-sm"> 
             <div className="service-image-container">
