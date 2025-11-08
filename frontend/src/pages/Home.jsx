@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Container, Row, Col, Card, Form, Button, Alert, Carousel } from 'react-bootstrap'
 import { pedidosAPI } from '../services/api'
 import './Home.css'
 
 const Home = () => {
+  const formularioRef = useRef(null)
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-    
+
     const timer = setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }, 100)
-    
+
     return () => clearTimeout(timer)
   }, [])
 
@@ -108,6 +110,10 @@ const Home = () => {
         telefono: '',
         observaciones: '',
       })
+
+      if (formularioRef.current) {
+        formularioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
 
       setTimeout(() => {
         setAlert({ show: false, variant: '', message: '' })
@@ -500,7 +506,7 @@ const Home = () => {
 </section>
 
 
-      <section className="form-section py-5" id="formulario">
+      <section className="form-section py-5" id="formulario" ref={formularioRef}>
         <Container>
           <h2 className="section-title text-center mb-4">Solicita tu <span className="text-primary">Entrega</span></h2>
           <p className="text-center text-muted mb-5">Completa el formulario y nos pondremos en contacto contigo</p>
