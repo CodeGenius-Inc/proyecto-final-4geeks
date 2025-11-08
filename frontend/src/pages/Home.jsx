@@ -160,10 +160,13 @@ const Home = () => {
               </div>
               <div className="contact-info animate-slide-up-delay-2">
                 <Button
+                  as="button"
+                  type="button"
                   variant="light"
                   size="lg"
                   className="me-3 btn-hero"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault()
                     const formulario = document.getElementById('formulario')
                     if (formulario) {
                       formulario.scrollIntoView({ behavior: 'smooth', block: 'start' })
