@@ -189,8 +189,8 @@ const PedidosList = () => {
       </Alert>
 
       <div className="filters-card mb-3">
-        <Row className="g-3">
-          <Col md={4}>
+        <Row className="g-2 g-md-3">
+          <Col xs={12} md={4}>
             <Form.Control
               type="text"
               placeholder="Buscar por cliente o dirección..."
@@ -198,7 +198,7 @@ const PedidosList = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </Col>
-          <Col md={4}>
+          <Col xs={12} sm={6} md={4}>
             <Form.Select value={filterUrgencia} onChange={(e) => setFilterUrgencia(e.target.value)}>
               <option value="">Todas las urgencias</option>
               <option value="normal">Normal</option>
@@ -206,7 +206,7 @@ const PedidosList = () => {
               <option value="critico">Crítico</option>
             </Form.Select>
           </Col>
-          <Col md={4}>
+          <Col xs={12} sm={6} md={4}>
             <Form.Select value={filterCombustible} onChange={(e) => setFilterCombustible(e.target.value)}>
               <option value="">Todos los combustibles</option>
               <option value="Regular">Gasolina Regular</option>

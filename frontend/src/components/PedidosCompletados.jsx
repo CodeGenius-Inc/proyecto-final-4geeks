@@ -55,8 +55,8 @@ const PedidosCompletados = () => {
   return (
     <>
       <div className="filters-card mb-3">
-        <Row className="g-3 align-items-end">
-          <Col md={4}>
+        <Row className="g-2 g-md-3 align-items-end">
+          <Col xs={12} md={4}>
             <Form.Control
               type="text"
               placeholder="Buscar cliente o dirección..."
@@ -64,7 +64,7 @@ const PedidosCompletados = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </Col>
-          <Col md={4}>
+          <Col xs={12} sm={6} md={4}>
             <Form.Label className="small text-muted mb-1">Fecha desde:</Form.Label>
             <Form.Control
               type="date"
@@ -72,7 +72,7 @@ const PedidosCompletados = () => {
               onChange={(e) => setFilterInicio(e.target.value)}
             />
           </Col>
-          <Col md={4}>
+          <Col xs={12} sm={6} md={4}>
             <Form.Label className="small text-muted mb-1">Fecha hasta:</Form.Label>
             <Form.Control
               type="date"
