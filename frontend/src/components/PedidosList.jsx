@@ -257,8 +257,8 @@ const PedidosList = () => {
                       <Button size="sm" variant="success" onClick={() => cambiarEstado(pedido.id, 'en_ruta')}>
                         En Ruta
                       </Button>
-                      <Button size="sm" variant="danger" onClick={() => eliminarPedido(pedido)}>
-                        ✕
+                      <Button size="sm" variant="outline-danger" onClick={() => eliminarPedido(pedido)}>
+                        Cancelar
                       </Button>
                     </div>
                   </td>
