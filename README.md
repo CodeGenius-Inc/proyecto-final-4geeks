@@ -36,7 +36,6 @@ Sistema web completo para la gestión y seguimiento de pedidos de combustible co
 - 📱 **Responsive**: Funciona en todos los dispositivos
 
 ## 🛠️ Tecnologías
-
 ### Frontend
 - **React 18** - Framework de UI
 - **React Router** - Navegación
